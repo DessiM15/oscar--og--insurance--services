@@ -222,8 +222,9 @@ const translations = {
         finePrint: "Free review. No obligation. No spam.",
       },
       success: {
-        title: "You're All Set!",
-        body: "We'll reach out within 1 business day with your personalized options.",
+        title: "Thanks! Now Book Your Meeting",
+        body: "Your info has been sent. Pick a time below to meet with Oscar and discuss your options.",
+        bookingLabel: "Schedule Your Free Consultation",
       },
       directContact: {
         or: "Or reach out directly",
@@ -482,8 +483,9 @@ const translations = {
         finePrint: "Revision gratuita. Sin obligacion. Sin spam.",
       },
       success: {
-        title: "Listo!",
-        body: "Nos comunicaremos contigo en 1 dia habil con tus opciones personalizadas.",
+        title: "Gracias! Ahora Agenda Tu Reunion",
+        body: "Tu informacion ha sido enviada. Elige un horario abajo para reunirte con Oscar y discutir tus opciones.",
+        bookingLabel: "Agenda Tu Consulta Gratuita",
       },
       directContact: {
         or: "O comunicate directamente",

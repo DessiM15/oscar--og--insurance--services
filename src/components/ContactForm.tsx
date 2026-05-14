@@ -1,21 +1,62 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const CALENDLY_URL = "https://calendly.com/ogarcia-19/new-meeting-with-oscar";
 
 export default function ContactForm() {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [calendlyParams, setCalendlyParams] = useState("");
+  const bookingRef = useRef<HTMLDivElement>(null);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission - replace with actual form handler (Formspree, etc.)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = (formData.get("name") as string) || "";
+    const phone = (formData.get("phone") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const service = (formData.get("service") as string) || "";
+    const message = (formData.get("message") as string) || "";
+
+    // Build mailto link with form data
+    const subject = `New Lead: ${service}`;
+    const body = [
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Service Interest: ${service}`,
+      message ? `\nMessage:\n${message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const mailtoLink = `mailto:ogarcia@tpension.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_blank");
+
+    // Build Calendly URL params for pre-filling
+    const params = new URLSearchParams();
+    if (name) params.set("name", name);
+    if (email) params.set("email", email);
+    setCalendlyParams(params.toString());
+
     setLoading(false);
     setSubmitted(true);
+
+    // Scroll to the booking widget after a short delay
+    setTimeout(() => {
+      bookingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
   };
+
+  const calendlySrc = calendlyParams
+    ? `${CALENDLY_URL}?${calendlyParams}`
+    : CALENDLY_URL;
 
   return (
     <section id="contact" className="py-20 lg:py-28 bg-gray-50">
@@ -90,10 +131,10 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Right: Form */}
+          {/* Right: Form or Success */}
           <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-12">
+              <div className="flex flex-col items-center justify-center text-center py-8">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -102,7 +143,10 @@ export default function ContactForm() {
                 <h3 className="text-2xl font-bold text-[#1B2A4A] mb-3">
                   {t.contact.success.title}
                 </h3>
-                <p className="text-gray-600 text-lg">{t.contact.success.body}</p>
+                <p className="text-gray-600 text-lg mb-6">{t.contact.success.body}</p>
+                <svg className="w-6 h-6 text-[#1B2A4A] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -113,6 +157,7 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     placeholder={t.contact.form.namePlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1B2A4A] focus:ring-2 focus:ring-[#1B2A4A]/10 outline-none transition-all text-gray-800 placeholder-gray-400"
@@ -127,6 +172,7 @@ export default function ContactForm() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
                       required
                       placeholder={t.contact.form.phonePlaceholder}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1B2A4A] focus:ring-2 focus:ring-[#1B2A4A]/10 outline-none transition-all text-gray-800 placeholder-gray-400"
@@ -138,6 +184,7 @@ export default function ContactForm() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
                       placeholder={t.contact.form.emailPlaceholder}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1B2A4A] focus:ring-2 focus:ring-[#1B2A4A]/10 outline-none transition-all text-gray-800 placeholder-gray-400"
@@ -151,6 +198,7 @@ export default function ContactForm() {
                     {t.contact.form.service}
                   </label>
                   <select
+                    name="service"
                     required
                     defaultValue=""
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1B2A4A] focus:ring-2 focus:ring-[#1B2A4A]/10 outline-none transition-all text-gray-800 bg-white appearance-none"
@@ -178,6 +226,7 @@ export default function ContactForm() {
                     {t.contact.form.message}
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     placeholder={t.contact.form.messagePlaceholder}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1B2A4A] focus:ring-2 focus:ring-[#1B2A4A]/10 outline-none transition-all text-gray-800 placeholder-gray-400 resize-none"
@@ -212,6 +261,30 @@ export default function ContactForm() {
             )}
           </div>
         </div>
+
+        {/* Calendly Booking Widget — appears after form submission */}
+        {submitted && (
+          <div ref={bookingRef} className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#1B2A4A] mb-2">
+                {t.contact.success.bookingLabel}
+              </h3>
+              <p className="text-gray-500">
+                {t.contact.success.body}
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              <iframe
+                src={calendlySrc}
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Schedule a meeting with Oscar"
+                className="w-full"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
