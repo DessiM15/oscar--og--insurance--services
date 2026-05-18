@@ -25,8 +25,8 @@ export default function Navbar() {
             <Image
               src="/og-logo.png"
               alt="OG Insurance Services"
-              width={50}
-              height={50}
+              width={62}
+              height={62}
               className="rounded-full"
             />
             <div className="hidden sm:block">

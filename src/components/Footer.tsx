@@ -17,8 +17,8 @@ export default function Footer() {
               <Image
                 src="/og-logo.png"
                 alt="OG Insurance Services"
-                width={48}
-                height={48}
+                width={58}
+                height={58}
                 className="rounded-full"
               />
               <div>
