@@ -225,6 +225,8 @@ const translations = {
         title: "Thanks! Now Book Your Meeting",
         body: "Your info has been sent. Pick a time below to meet with Oscar and discuss your options.",
         bookingLabel: "Schedule Your Free Consultation",
+        scheduleMessage: "Pick a time that works for you and meet with Oscar to discuss your coverage options — no cost, no obligation.",
+        scheduleButton: "Book a Meeting",
       },
       directContact: {
         or: "Or reach out directly",
@@ -486,6 +488,8 @@ const translations = {
         title: "Gracias! Ahora Agenda Tu Reunion",
         body: "Tu informacion ha sido enviada. Elige un horario abajo para reunirte con Oscar y discutir tus opciones.",
         bookingLabel: "Agenda Tu Consulta Gratuita",
+        scheduleMessage: "Elige un horario que te convenga y reunete con Oscar para discutir tus opciones de cobertura — sin costo, sin obligacion.",
+        scheduleButton: "Agendar Reunion",
       },
       directContact: {
         or: "O comunicate directamente",
