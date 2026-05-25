@@ -40,7 +40,7 @@ export default function Footer() {
                 {t.contact.directContact.phone}
               </a>
               <a
-                href="mailto:ogarcia@tpension.com"
+                href="mailto:ogarcia@tpensions.com"
                 className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -46,7 +46,7 @@ export default function ContactForm() {
               </a>
 
               <a
-                href="mailto:ogarcia@tpension.com"
+                href="mailto:ogarcia@tpensions.com"
                 className="flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1B2A4A]/20 transition-all group"
               >
                 <div className="p-3 bg-[#1B2A4A]/5 rounded-xl text-[#1B2A4A] group-hover:bg-[#1B2A4A]/10 transition-colors">

@@ -231,7 +231,7 @@ const translations = {
       directContact: {
         or: "Or reach out directly",
         phone: "956-335-0488",
-        email: "ogarcia@tpension.com",
+        email: "ogarcia@tpensions.com",
       },
     },
 
@@ -494,7 +494,7 @@ const translations = {
       directContact: {
         or: "O comunicate directamente",
         phone: "956-335-0488",
-        email: "ogarcia@tpension.com",
+        email: "ogarcia@tpensions.com",
       },
     },
 
