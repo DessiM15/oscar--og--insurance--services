@@ -15,14 +15,14 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/og-logo.png"
-                alt="OG Insurance Services"
-                width={58}
-                height={58}
+                src="/insurance-solutions-logo.png"
+                alt="OG Insurance Solutions"
+                width={130}
+                height={130}
                 className="rounded-full"
               />
               <div>
-                <p className="text-lg font-bold leading-tight">OG Insurance Services</p>
+                <p className="text-lg font-bold leading-tight">OG Insurance Solutions</p>
                 <p className="text-xs text-white/50">Oscar Garcia</p>
               </div>
             </div>
@@ -80,6 +80,11 @@ export default function Footer() {
               <li>
                 <a href="#insurance" className="text-sm text-white/70 hover:text-white transition-colors">
                   {t.insurance.products.finalExpense.title}
+                </a>
+              </li>
+              <li>
+                <a href="#dental" className="text-sm text-white/70 hover:text-white transition-colors">
+                  {t.dental.title}
                 </a>
               </li>
             </ul>

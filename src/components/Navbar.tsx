@@ -12,6 +12,7 @@ export default function Navbar() {
     { label: t.nav.home, href: "#" },
     { label: t.nav.medicare, href: "#medicare" },
     { label: t.nav.insurance, href: "#insurance" },
+    { label: t.nav.dental, href: "#dental" },
     { label: t.nav.about, href: "#about" },
     { label: t.nav.contact, href: "#contact" },
   ];
@@ -19,21 +20,21 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/og-logo.png"
-              alt="OG Insurance Services"
-              width={62}
-              height={62}
+              src="/insurance-solutions-logo.png"
+              alt="OG Insurance Solutions"
+              width={130}
+              height={130}
               className="rounded-full"
             />
             <div className="hidden sm:block">
               <p className="text-lg font-bold text-[#1B2A4A] leading-tight">
                 OG Insurance
               </p>
-              <p className="text-xs text-gray-500 leading-tight">Services</p>
+              <p className="text-xs text-gray-500 leading-tight">Solutions</p>
             </div>
           </a>
 

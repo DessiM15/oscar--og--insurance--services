@@ -8,6 +8,7 @@ const translations = {
       insurance: "Insurance",
       about: "About",
       contact: "Contact",
+      dental: "Dental",
       getQuote: "Get a Quote",
       callNow: "Call Now",
     },
@@ -32,9 +33,10 @@ const translations = {
       label: "Our Services",
       headline: "Comprehensive Coverage for Every Need",
       subheadline:
-        "Whether you're navigating Medicare or looking for life insurance protection, OG Insurance Services has you covered.",
+        "Whether you're navigating Medicare or looking for life insurance protection, OG Insurance Solutions has you covered.",
       medicareTab: "Medicare",
       insuranceTab: "Life & Insurance",
+      dentalTab: "Dental",
     },
 
     // Medicare Section
@@ -182,6 +184,32 @@ const translations = {
       },
     },
 
+    // Dental Section
+    dental: {
+      title: "Dental Coverage",
+      headline: "Protect Your Smile with Dental Coverage",
+      subheadline:
+        "We offer dental coverage plans to help protect your smile and overall health. From routine checkups to major procedures, we have you covered.",
+      services: {
+        preventive: {
+          title: "Preventive Care",
+          description:
+            "Routine cleanings, oral exams, X-rays, and fluoride treatments — covered to keep your teeth and gums healthy.",
+        },
+        basic: {
+          title: "Basic Procedures",
+          description:
+            "Fillings, extractions, and other essential treatments to address common dental issues and keep you pain-free.",
+        },
+        major: {
+          title: "Major Procedures",
+          description:
+            "Crowns, bridges, dentures, and root canals — coverage for the bigger procedures when you need them most.",
+        },
+      },
+      cta: "Book a Dental Consultation",
+    },
+
     // About
     about: {
       label: "About",
@@ -212,6 +240,7 @@ const translations = {
           "Medicare — I'm turning 65 or need help choosing a plan",
           "Life Insurance — Term, Whole, or IUL",
           "Final Expense Coverage",
+          "Dental Coverage",
           "Annuities & Retirement Planning",
           "I'm not sure — I need guidance",
         ],
@@ -245,8 +274,8 @@ const translations = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
       disclaimer:
-        "OG Insurance Services is an independent insurance agency. Oscar Garcia is a licensed insurance agent. Products and availability may vary by state. This website is for informational purposes only and does not constitute financial or insurance advice.",
-      copyright: "OG Insurance Services. All rights reserved.",
+        "OG Insurance Solutions is an independent insurance agency. Oscar Garcia is a licensed insurance agent. Products and availability may vary by state. This website is for informational purposes only and does not constitute financial or insurance advice.",
+      copyright: "OG Insurance Solutions. All rights reserved.",
     },
 
     // Sticky CTA
@@ -271,6 +300,7 @@ const translations = {
       insurance: "Seguros",
       about: "Nosotros",
       contact: "Contacto",
+      dental: "Dental",
       getQuote: "Cotizacion Gratis",
       callNow: "Llamar Ahora",
     },
@@ -295,9 +325,10 @@ const translations = {
       label: "Nuestros Servicios",
       headline: "Cobertura Completa para Cada Necesidad",
       subheadline:
-        "Ya sea que estes navegando Medicare o buscando proteccion con seguro de vida, OG Insurance Services te tiene cubierto.",
+        "Ya sea que estes navegando Medicare o buscando proteccion con seguro de vida, OG Insurance Solutions te tiene cubierto.",
       medicareTab: "Medicare",
       insuranceTab: "Vida y Seguros",
+      dentalTab: "Dental",
     },
 
     // Medicare Section
@@ -445,6 +476,32 @@ const translations = {
       },
     },
 
+    // Dental Section
+    dental: {
+      title: "Cobertura Dental",
+      headline: "Protege Tu Sonrisa con Cobertura Dental",
+      subheadline:
+        "Ofrecemos planes de cobertura dental para ayudar a proteger tu sonrisa y tu salud en general. Desde chequeos de rutina hasta procedimientos mayores, te tenemos cubierto.",
+      services: {
+        preventive: {
+          title: "Cuidado Preventivo",
+          description:
+            "Limpiezas de rutina, examenes orales, radiografias y tratamientos de fluoruro — cubiertos para mantener tus dientes y encias saludables.",
+        },
+        basic: {
+          title: "Procedimientos Basicos",
+          description:
+            "Empastes, extracciones y otros tratamientos esenciales para atender problemas dentales comunes y mantenerte sin dolor.",
+        },
+        major: {
+          title: "Procedimientos Mayores",
+          description:
+            "Coronas, puentes, dentaduras y endodoncias — cobertura para los procedimientos mas grandes cuando mas los necesitas.",
+        },
+      },
+      cta: "Agendar Consulta Dental",
+    },
+
     // About
     about: {
       label: "Nosotros",
@@ -475,6 +532,7 @@ const translations = {
           "Medicare — Cumplo 65 o necesito ayuda eligiendo un plan",
           "Seguro de Vida — Termino, Vida Entera o IUL",
           "Cobertura de Gastos Finales",
+          "Cobertura Dental",
           "Anualidades y Planificacion de Jubilacion",
           "No estoy seguro — necesito orientacion",
         ],
@@ -508,8 +566,8 @@ const translations = {
       privacy: "Politica de Privacidad",
       terms: "Terminos de Servicio",
       disclaimer:
-        "OG Insurance Services es una agencia de seguros independiente. Oscar Garcia es un agente de seguros licenciado. Los productos y disponibilidad pueden variar por estado. Este sitio web es solo para fines informativos y no constituye asesoramiento financiero o de seguros.",
-      copyright: "OG Insurance Services. Todos los derechos reservados.",
+        "OG Insurance Solutions es una agencia de seguros independiente. Oscar Garcia es un agente de seguros licenciado. Los productos y disponibilidad pueden variar por estado. Este sitio web es solo para fines informativos y no constituye asesoramiento financiero o de seguros.",
+      copyright: "OG Insurance Solutions. Todos los derechos reservados.",
     },
 
     // Sticky CTA

@@ -21,8 +21,8 @@ export default function About() {
                 {/* Logo */}
                 <div className="mb-8">
                   <Image
-                    src="/og-logo.png"
-                    alt="OG Insurance Services"
+                    src="/insurance-solutions-logo.png"
+                    alt="OG Insurance Solutions"
                     width={100}
                     height={100}
                     className="rounded-full border-4 border-white/20"
